@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'common.dart';
 import './../main.dart';
 import './page1.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class PersonalInformationPage extends StatelessWidget {
   // const PersonalInformationPage({super.key});
@@ -27,10 +28,17 @@ class PersonalInformationPage extends StatelessWidget {
                 width: 200,
                 height: 200,
                 margin: EdgeInsets.only(bottom: 40),
-                child: Image.network(
-                  'https://i.imgur.com/P88WwLx.png',
+                child: 
+                FadeInImage.memoryNetwork(
+                  placeholder: kTransparentImage, // transparent_image 提供的圖
+                  fadeInDuration: const Duration(seconds: 1),
+                  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Snake_River_%285mb%29.jpg/1200px-Snake_River_%285mb%29.jpg?20080122031527',
                   fit: BoxFit.cover,
                 ),
+                // Image.network(
+                //   'https://i.imgur.com/P88WwLx.png',
+                //   fit: BoxFit.cover,
+                // ),
               ),
               const Padding(
                 padding: EdgeInsets.only(bottom:12),

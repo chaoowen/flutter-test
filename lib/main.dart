@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'component/page1.dart';
 import 'component/page2.dart';
 import 'component/page3.dart';
+import 'component/page4.dart';
 
 void main() {
   runApp(
@@ -44,7 +45,7 @@ class home extends State<MyApp>{
     IndexPage(),
     FormPage(),
     DateTimePage(),
-    Container(color: Colors.limeAccent),
+    AnimationPage(),
   ];
 
   @override
@@ -64,8 +65,8 @@ class home extends State<MyApp>{
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.accessibility_new_outlined, color: greenColor), backgroundColor: Colors.amberAccent, label: 'index'),
           BottomNavigationBarItem(icon: Icon(Icons.note_add_rounded, color: greenColor), backgroundColor: Colors.amberAccent, label: 'apply'),
-          BottomNavigationBarItem(icon: Icon(Icons.handshake, color: greenColor), backgroundColor: Colors.amberAccent, label: 'three'),
-          BottomNavigationBarItem(icon: Icon(Icons.safety_check_sharp, color: greenColor), backgroundColor: Colors.amberAccent, label: 'four')
+          BottomNavigationBarItem(icon: Icon(Icons.handshake, color: greenColor), backgroundColor: Colors.amberAccent, label: 'datetime'),
+          BottomNavigationBarItem(icon: Icon(Icons.safety_check_sharp, color: greenColor), backgroundColor: Colors.amberAccent, label: 'animate')
         ]
       ),
     );

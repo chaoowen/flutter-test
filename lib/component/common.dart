@@ -67,7 +67,7 @@ Drawer SlideBar(BuildContext context){
                   Navigator.of(context).pop();   // 點擊後將 Drawer 關掉
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) {
-                      return new PersonalInformationPage(userNumber: 'X221');   
+                      return PersonalInformationPage(userNumber: 'X221');   
                     })
                   );
                 },

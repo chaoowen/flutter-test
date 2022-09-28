@@ -188,25 +188,38 @@ class _FormPageState extends State<FormPage> {
                       margin: EdgeInsets.fromLTRB(16,0,16,0),
                       child: Text("What's your species ?"),
                     ),
-                    Column(
-                      children: 
-                        speciesCharacter.map<ListTile>((String value) {
-                          return ListTile(
-                            title: Text(value),
-                            leading: Radio(
-                              value: value,
-                              groupValue: radioValue,
-                              onChanged: (val) {
-                                setState(() {
-                                  radioValue = val!;
-                                });
-                              },
-                              activeColor: Color.fromRGBO(88, 135, 109, 1),
-                              fillColor: MaterialStateColor.resolveWith((states) => Color.fromRGBO(88, 135, 109, 1)),
-                            ),
-                          );
-                        }).toList(),
-                    )
+                    Container(
+                      margin: EdgeInsets.fromLTRB(16,0,16,0),
+                      child: Column(
+                        children: 
+                          speciesCharacter.map<Row>((String value) {
+                            return Row(
+                              children: [
+                                Radio(
+                                  value: value,
+                                  groupValue: radioValue,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      radioValue = val!;
+                                    });
+                                  },
+                                  activeColor: Color.fromRGBO(88, 135, 109, 1),
+                                  fillColor: MaterialStateColor.resolveWith((states) => Color.fromRGBO(88, 135, 109, 1)),
+                                ),
+                                GestureDetector(
+                                  onTap: (){ 
+                                    setState(() {
+                                      radioValue = value;
+                                    });
+                                  },
+                                  child: Text(value),
+                                ),
+                              ],
+                            );
+                            
+                          }).toList(),
+                      ),
+                    ),
                   ],
                 ),
                 // select -------------------------------------------

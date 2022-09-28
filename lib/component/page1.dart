@@ -157,44 +157,42 @@ class IndexPage1 extends StatelessWidget {
 }
 
 // ----------------------------------------------------
-class IndexPage2 extends StatelessWidget {
+class IndexPage2 extends StatefulWidget {
   const IndexPage2({super.key});
 
   @override
+  State<IndexPage2> createState() => _IndexPage2State();
+}
+
+class _IndexPage2State extends State<IndexPage2> {
+  final list = List<String>.generate(20, (i) => "Item ${i + 1}");
+
+  @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, idx) {
-      return Card(
-        margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
-        child: Container(
-          padding: EdgeInsets.all(10),
-          height: 120,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            // color: Color.fromRGBO(88, 135, 109, 1),
+    return ListView.builder(
+      itemCount: list.length,
+      itemBuilder: (context, idx) {
+        final item = list[idx];
+        return Dismissible(
+          key: Key(item),
+          background: Container(color: Color.fromRGBO(88, 135, 109, 1)),
+          onDismissed: (direction) {
+            setState(() {
+              list.removeAt(idx);
+            });
+            ScaffoldMessenger.of(context).showSnackBar(  //顯示Snackbar
+              SnackBar(
+                content: Text('you delete item $item'),
+                duration: Duration(milliseconds: 500), // 預設四秒太久了
+              ),
+            );
+          },
+          child: ListTile(
+            title: Text('this is item $item', textAlign: TextAlign.center,)
           ),
-          child: Row(
-            // mainAxisAlignment 控制 column & row 的排列方式
-            mainAxisAlignment: MainAxisAlignment.spaceAround,  
-            children: [
-              Icon(
-                Icons.star,
-                color: Color.fromRGBO(214, 218, 88, 1),
-                size: 24.0,
-              ),
-              Text(
-                '${idx} -- padma howhow',
-                style: const TextStyle(color: Color.fromRGBO(88, 135, 109, 1)),
-              ),
-              Icon(
-                Icons.calendar_month_rounded,
-                color: Color.fromRGBO(88, 135, 109, 1),
-                size: 24.0,
-              ),
-            ],
-          ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 }
 
