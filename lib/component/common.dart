@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import './page5.dart';
+import './page6.dart';
 
 
 // ----------------------------------------------------------
@@ -31,6 +32,9 @@ Container SnackBarButton(
     )
   );
 }
+
+// ------------------------------------------------------
+
 Drawer SlideBar(BuildContext context){
   return Drawer(
     backgroundColor: Colors.white,
@@ -76,6 +80,11 @@ Drawer SlideBar(BuildContext context){
                 title: Text('record'),
                 onTap: () {
                   Navigator.pop(context);   // 點擊後將 Drawer 關掉
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) {
+                      return ApiListPage();   
+                    })
+                  );
                 },
               ),
             ],

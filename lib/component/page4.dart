@@ -63,17 +63,17 @@ class AnimationPage extends StatelessWidget {
         url: 'https://assets.juksy.com/files/articles/53954/800x_100_w-61c2fa191595e.jpg',
       ),
       pokemonItem(
-        name: '六尾 Luiway',
+        name: '六尾 Luoway',
         description: '長年在阿羅拉地區萬年積雪的山上生活，使得六尾擁有了冰的能力。',
         url: 'https://a.rimg.com.tw/s2/b/93/bc/21701025217468_963.jpg',
       ),
       pokemonItem(
-        name: '水君 Shuagin',
+        name: '水君 Shuegin',
         description: '體內蘊藏著泉水般溫柔的寶可夢。會用滑行般的動作在大地上奔跑，有著淨化濁水的力量。',
         url: 'https://img.ttshow.tw/images/author/dean/02034-6.jpg',
       ),
       pokemonItem(
-        name: '快龍 Kailong',
+        name: '快龍 Koailong',
         description: '能輕描淡寫地飛越驚濤駭浪，目睹這個景象的船長稱呼牠為大海的化身。',
         url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrj5ikzuzF7gnzUn8Y0Z5O-vnOHA_BRvgpuXrVowNlaWHlPe7-HTQZqqH18XBuBAf95Y&usqp=CAU',
       ),

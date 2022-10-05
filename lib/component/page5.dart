@@ -32,7 +32,7 @@ class PersonalInformationPage extends StatelessWidget {
                 FadeInImage.memoryNetwork(
                   placeholder: kTransparentImage, // transparent_image 提供的圖
                   fadeInDuration: const Duration(seconds: 1),
-                  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Snake_River_%285mb%29.jpg/1200px-Snake_River_%285mb%29.jpg?20080122031527',
+                  image: 'https://i.imgur.com/P88WwLx.png',
                   fit: BoxFit.cover,
                 ),
                 // Image.network(
